@@ -7,30 +7,29 @@ function App() {
     const [number1, setNumber1] = useState(10)
     const [number2, setNumber2] = useState(10)
     const [operand, setOperand] = useState('+')
-    const [result,setResult] = useState(0)
+    const [result, setResult] = useState(0)
     const changeNumber1 = (event) => {
         setNumber1(+event.target.value);
         changeNumberOfOperand(+event.target.value, number2, operand)
     }
     const changeNumber2 = (event) => {
         setNumber2(+event.target.value);
-        changeNumberOfOperand(number1,+event.target.value,operand)
+        changeNumberOfOperand(number1, +event.target.value, operand)
     }
 
 
     const changeOperand = (event) => {
         const operand = event.target.value;
-        changeNumberOfOperand(number1,number2, operand)
+        changeNumberOfOperand(number1, number2, operand)
         setOperand(operand)
     }
 
-    const changeNumberOfOperand = (n1,n2,o) => {
+    const changeNumberOfOperand = (n1, n2, o) => {
 
         if (o === '+') setResult(n1 + n2)
         if (o === '-') setResult(n1 - n2)
         if (o === '/') setResult(n1 / n2)
         if (o === '*') setResult(n1 * n2)
-
 
 
     }
